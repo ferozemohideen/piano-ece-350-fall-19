@@ -1,0 +1,50 @@
+Quartus Prime Archive log --	C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/skeleton.qarlog
+
+Archive:	C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/skeleton.qar
+Date:		Thu Nov 21 21:11:23 2019
+Quartus Prime		16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/Altera_UP_PS2_Command_Out.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/Altera_UP_PS2_Data_In.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/Hexadecimal_To_Seven_Segment.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/PS2_Controller.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/PS2_Interface.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/Reset_Delay.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/VGA_Audio_PLL.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/assignment_defaults.qdf
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/dmem.cmp
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/dmem.mif
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/dmem.qip
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/dmem.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/dmem_inst.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/imem.cmp
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/imem.mif
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/imem.qip
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/imem.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/imem_inst.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/img_bars.mif
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/img_data.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/img_data_logo.mif
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/img_index.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/index.mif
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/index_logo.mif
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/lab7_img_data.mif
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/lab7_img_index.mif
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/lcd.sv
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/pll.bsf
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/pll.cmp
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/pll.ppf
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/pll.qip
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/pll.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/processor.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/skeleton.qpf
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/skeleton.qsf
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/skeleton.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/skeleton_assignment_defaults.qdf
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/vga_controller.v
+C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/piano/video_sync_generator.v
+	======= Total: 39 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

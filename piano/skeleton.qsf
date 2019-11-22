@@ -165,6 +165,25 @@ set_location_assignment PIN_H21 -to leds[4]
 set_location_assignment PIN_G20 -to leds[5]
 set_location_assignment PIN_G22 -to leds[6]
 set_location_assignment PIN_G21 -to leds[7]
+set_location_assignment PIN_AD26 -to c_note
+set_location_assignment PIN_AC26 -to d_note
+set_location_assignment PIN_AB27 -to e_note
+set_location_assignment PIN_AD27 -to f_note
+set_location_assignment PIN_AC27 -to g_note
+set_location_assignment PIN_AC28 -to a_note
+set_location_assignment PIN_AB28 -to b_note
+set_global_assignment -name VERILOG_FILE avconf/I2C_Controller.v
+set_global_assignment -name VERILOG_FILE avconf/avconf.v
+set_global_assignment -name VERILOG_FILE Audio_Controller/Audio_Controller.v
+set_global_assignment -name VERILOG_FILE Audio_Controller/Audio_Clock.v
+set_global_assignment -name VERILOG_FILE Audio_Controller/Altera_UP_SYNC_FIFO.v
+set_global_assignment -name VERILOG_FILE Audio_Controller/Altera_UP_Clock_Edge.v
+set_global_assignment -name VERILOG_FILE Audio_Controller/Altera_UP_Audio_Out_Serializer.v
+set_global_assignment -name VERILOG_FILE Audio_Controller/Altera_UP_Audio_In_Deserializer.v
+set_global_assignment -name VERILOG_FILE Audio_Controller/Altera_UP_Audio_Bit_Counter.v
+set_global_assignment -name VERILOG_FILE keytr.v
+set_global_assignment -name VERILOG_FILE DE2_Audio_Example.v
+set_global_assignment -name VERILOG_FILE counter.v
 set_global_assignment -name MIF_FILE index.mif
 set_global_assignment -name MIF_FILE index_logo.mif
 set_global_assignment -name MIF_FILE img_bars.mif
@@ -196,11 +215,4 @@ set_global_assignment -name VERILOG_FILE img_index.v
 set_global_assignment -name VERILOG_FILE img_data.v
 set_global_assignment -name MIF_FILE lab7_img_data.mif
 set_global_assignment -name MIF_FILE lab7_img_index.mif
-set_location_assignment PIN_AD26 -to c_note
-set_location_assignment PIN_AC26 -to d_note
-set_location_assignment PIN_AB27 -to e_note
-set_location_assignment PIN_AD27 -to f_note
-set_location_assignment PIN_AC27 -to g_note
-set_location_assignment PIN_AC28 -to a_note
-set_location_assignment PIN_AB28 -to b_note
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

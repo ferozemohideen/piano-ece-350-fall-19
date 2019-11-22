@@ -1,0 +1,78 @@
+MIF/HEX Update report for DE2_Audio_Example
+Sat Apr 22 16:24:27 2017
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. MIF/HEX Update Summary
+  3. MIF/HEX Update Processed Files
+  4. MIF/HEX Update Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------+
+; MIF/HEX Update Summary                                        ;
++-----------------------+---------------------------------------+
+; MIF/HEX Update Status ; Successful - Sat Apr 22 16:24:27 2017 ;
+; Revision Name         ; DE2_Audio_Example                     ;
+; Top-level Entity Name ; DE2_Audio_Example                     ;
+; Family                ; Cyclone IV E                          ;
+; Device                ; EP4CE115F29C7                         ;
++-----------------------+---------------------------------------+
+
+
++--------------------------------+
+; MIF/HEX Update Processed Files ;
++--------------------------------+
+; File Name                      ;
++--------------------------------+
+; E:/Audio_Demo/dmem.mif         ;
+; E:/Audio_Demo/imem.mif         ;
++--------------------------------+
+
+
++-------------------------+
+; MIF/HEX Update Messages ;
++-------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime MIF/HEX Update
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
+    Info: Processing started: Sat Apr 22 16:24:12 2017
+Info: Command: quartus_cdb DE2_Audio_Example -c DE2_Audio_Example --update_mif
+Warning (113028): 4073 out of 4096 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: E:/Audio_Demo/dmem.mif Line: 1
+    Warning (113027): Addresses ranging from 23 to 4095 are not initialized File: E:/Audio_Demo/dmem.mif Line: 1
+Warning (113028): 4081 out of 4096 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: E:/Audio_Demo/imem.mif Line: 1
+    Warning (113027): Addresses ranging from 15 to 4095 are not initialized File: E:/Audio_Demo/imem.mif Line: 1
+Info (39024): Processed the following Memory Initialization File(s)
+    Info (39025): Processed Memory Initialization File E:/Audio_Demo/dmem.mif File: E:/Audio_Demo/dmem.mif Line: 0
+    Info (39025): Processed Memory Initialization File E:/Audio_Demo/imem.mif File: E:/Audio_Demo/imem.mif Line: 0
+Info: Quartus Prime MIF/HEX Update was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 853 megabytes
+    Info: Processing ended: Sat Apr 22 16:24:29 2017
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:01
+
+

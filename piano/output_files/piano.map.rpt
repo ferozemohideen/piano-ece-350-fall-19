@@ -1,0 +1,210 @@
+Analysis & Synthesis report for piano
+Fri Nov 22 04:11:20 2019
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Fri Nov 22 04:11:20 2019           ;
+; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name                      ; piano                                       ;
+; Top-level Entity Name              ; piano                                       ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; piano              ; piano              ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Fri Nov 22 04:10:58 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off piano -c piano
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20029): Only one processor detected - disabling parallel compilation
+Info (12021): Found 1 design units, including 1 entities, in source file video_sync_generator.v
+    Info (12023): Found entity 1: video_sync_generator File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/video_sync_generator.v Line: 1
+Warning (10229): Verilog HDL Expression warning at vga_controller.v(97): truncated literal to match 8 bits File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/vga_controller.v Line: 97
+Warning (10229): Verilog HDL Expression warning at vga_controller.v(98): truncated literal to match 8 bits File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/vga_controller.v Line: 98
+Warning (10229): Verilog HDL Expression warning at vga_controller.v(99): truncated literal to match 8 bits File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/vga_controller.v Line: 99
+Info (12021): Found 1 design units, including 1 entities, in source file vga_controller.v
+    Info (12023): Found entity 1: vga_controller File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/vga_controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga_audio_pll.v
+    Info (12023): Found entity 1: VGA_Audio_PLL File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/VGA_Audio_PLL.v Line: 39
+Warning (10275): Verilog HDL Module Instantiation warning at skeleton.v(269): ignored dangling comma in List of Port Connections File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/skeleton.v Line: 269
+Info (12021): Found 1 design units, including 1 entities, in source file skeleton.v
+    Info (12023): Found entity 1: skeleton File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/skeleton.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file reset_delay.v
+    Info (12023): Found entity 1: Reset_Delay File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/Reset_Delay.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ps2_interface.v
+    Info (12023): Found entity 1: PS2_Interface File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/PS2_Interface.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ps2_controller.v
+    Info (12023): Found entity 1: PS2_Controller File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/PS2_Controller.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file processor.v
+    Info (12023): Found entity 1: processor File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/processor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pll.v
+    Info (12023): Found entity 1: pll File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/pll.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file lcd.sv
+    Info (12023): Found entity 1: lcd File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/lcd.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file keytr.v
+    Info (12023): Found entity 1: keytr File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/keytr.v Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file img_index.v
+    Info (12023): Found entity 1: img_index File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/img_index.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file img_data.v
+    Info (12023): Found entity 1: img_data File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/img_data.v Line: 39
+Error (10170): Verilog HDL syntax error at imem_inst.v(1) near text: "(";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/imem_inst.v Line: 1
+Error (10839): Verilog HDL error at imem_inst.v(1): declaring global objects is a SystemVerilog feature File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/imem_inst.v Line: 1
+Info (12021): Found 0 design units, including 0 entities, in source file imem_inst.v
+Info (12021): Found 1 design units, including 1 entities, in source file imem.v
+    Info (12023): Found entity 1: imem File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/imem.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file hexadecimal_to_seven_segment.v
+    Info (12023): Found entity 1: Hexadecimal_To_Seven_Segment File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/Hexadecimal_To_Seven_Segment.v Line: 9
+Error (10170): Verilog HDL syntax error at dmem_inst.v(1) near text: "(";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Altera Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/dmem_inst.v Line: 1
+Error (10839): Verilog HDL error at dmem_inst.v(1): declaring global objects is a SystemVerilog feature File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/dmem_inst.v Line: 1
+Info (12021): Found 0 design units, including 0 entities, in source file dmem_inst.v
+Info (12021): Found 1 design units, including 1 entities, in source file dmem.v
+    Info (12023): Found entity 1: dmem File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/dmem.v Line: 39
+Warning (10275): Verilog HDL Module Instantiation warning at DE2_Audio_Example.v(161): ignored dangling comma in List of Port Connections File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/DE2_Audio_Example.v Line: 161
+Info (12021): Found 1 design units, including 1 entities, in source file de2_audio_example.v
+    Info (12023): Found entity 1: DE2_Audio_Example File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/DE2_Audio_Example.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file counter.v
+    Info (12023): Found entity 1: counter File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/counter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file altera_up_ps2_data_in.v
+    Info (12023): Found entity 1: Altera_UP_PS2_Data_In File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/Altera_UP_PS2_Data_In.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file altera_up_ps2_command_out.v
+    Info (12023): Found entity 1: Altera_UP_PS2_Command_Out File: C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/piano/Altera_UP_PS2_Command_Out.v Line: 10
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 4 errors, 6 warnings
+    Error: Peak virtual memory: 757 megabytes
+    Error: Processing ended: Fri Nov 22 04:11:20 2019
+    Error: Elapsed time: 00:00:22
+    Error: Total CPU time (on all processors): 00:00:20
+
+

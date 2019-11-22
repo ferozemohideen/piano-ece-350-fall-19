@@ -80,6 +80,9 @@ wire				write_audio_out;
  wire [31:0] f2;
  wire [31:0] f3;
  wire [31:0] f4;
+ wire [31:0] f5;
+ wire [31:0] f6;
+ wire [31:0] f7;
  
  
  assign f1 = 32'd5000;
@@ -103,7 +106,7 @@ wire				write_audio_out;
 
  //assign numcyc = 32'd500000;
  
- counter(CLOCK_50, numcyc, counterout);
+ counter audio_counter(CLOCK_50, numcyc, counterout);
  	
  assign thing2add = alloff ? 32'b0 : counterout;
  

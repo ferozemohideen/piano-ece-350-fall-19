@@ -124,8 +124,20 @@ assign b_note = SW[0];
 
  wire[31:0] numcyc;
 	wire [31:0] thing2add;
+	
+wire [31:0] termc, termd, terme, termf, terg, terma, termb;
+ assign termc = c_note? f1:32'b0;
+ assign termd = d_note? f2:32'b0;
+ assign terme = e_note? f3:32'b0;
+ assign termf = f_note? f4:32'b0;
+ assign termg = g_note? f5:32'b0;
+ assign terma = a_note? f6:32'b0;
+ assign termb = b_note? f7:32'b0;
+
+// //use muxes, then layered add
+assign numcyc = termc + termd + terme + termf + termg + terma + termb;
  
- assign numcyc = f1*c_note + f2*d_note + f3*e_note + f4*f_note + f5*g_note + f6*a_note + f7*b_note;
+ //assign numcyc = f1*c_note + f2*d_note + f3*e_note + f4*f_note + f5*g_note + f6*a_note + f7*b_note;
 
  nor alloffnor(alloff, c_note, d_note, e_note, f_note, g_note, a_note, b_note);
 

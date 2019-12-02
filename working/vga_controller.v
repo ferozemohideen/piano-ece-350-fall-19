@@ -94,9 +94,9 @@ assign pressed_a = in_a & a;
 assign pressed_b = in_b & b;
 
 always@(posedge VGA_CLK_n)	bgr_data <= bgr_data_raw;
-assign b_data = pressed_c | pressed_d | pressed_e | pressed_f | pressed_g | pressed_a | pressed_b ? 8'd8421504: bgr_data[23:16];
-assign g_data = pressed_c | pressed_d | pressed_e | pressed_f | pressed_g | pressed_a | pressed_b ? 8'd8421504: bgr_data[15:8];
-assign r_data = pressed_c | pressed_d | pressed_e | pressed_f | pressed_g | pressed_a | pressed_b ? 8'd8421504: bgr_data[7:0]; 
+assign b_data = (pressed_c | pressed_d | pressed_e | pressed_f | pressed_g | pressed_a | pressed_b) ? 8'd8421504: bgr_data[23:16];
+assign g_data = (pressed_c | pressed_d | pressed_e | pressed_f | pressed_g | pressed_a | pressed_b) ? 8'd8421504: bgr_data[15:8];
+assign r_data = (pressed_c | pressed_d | pressed_e | pressed_f | pressed_g | pressed_a | pressed_b) ? 8'd8421504: bgr_data[7:0]; 
 ///////////////////
 //////Delay the iHD, iVD,iDEN for one clock cycle;
 always@(negedge iVGA_CLK)

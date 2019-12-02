@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Tue Nov 26 16:09:05 2019
+Analysis & Synthesis Status : Successful - Mon Dec 02 06:48:05 2019
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : DE2_Audio_Example
 Top-level Entity Name : DE2_Audio_Example
 Family : Cyclone IV E
-Total logic elements : 1,271
-    Total combinational functions : 1,214
+Total logic elements : 1,233
+    Total combinational functions : 1,200
     Dedicated logic registers : 348
 Total registers : 348
-Total pins : 50
+Total pins : 52
 Total virtual pins : 0
-Total memory bits : 2,471,936
+Total memory bits : 1,851,104
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 2

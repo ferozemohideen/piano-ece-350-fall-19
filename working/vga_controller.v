@@ -12,12 +12,15 @@ module vga_controller(iRST_n,
 							 f,
 							 g,
 							 a,
-							 b);
+							 b,
+							 free_play_button,
+							 learn_song_button);
 
 	
 input iRST_n;
 input iVGA_CLK;
 input c, d, e, f, g, a, b;
+input free_play_button, learn_song_button;
 output reg oBLANK_n;
 output reg oHS;
 output reg oVS;
@@ -28,8 +31,8 @@ output [7:0] r_data;
 reg [18:0] ADDR;
 reg [23:0] bgr_data;
 wire VGA_CLK_n;
-wire [7:0] index;
-wire [23:0] bgr_data_raw;
+wire [7:0] index, index_keyboard, index_home_screen;
+wire [23:0] bgr_data_raw, bgr_data_raw_keyboard, bgr_data_raw_home_screen;
 wire cBLANK_n,cHS,cVS,rst;
 ////
 assign rst = ~iRST_n;
@@ -55,7 +58,13 @@ assign VGA_CLK_n = ~iVGA_CLK;
 img_data	img_data_inst (
 	.address ( ADDR ),
 	.clock ( VGA_CLK_n ),
-	.q ( index )
+	.q ( index_keyboard )
+	);
+
+img_data_home_screen	img_data_home_screen_inst (
+	.address ( ADDR ),
+	.clock ( VGA_CLK_n ),
+	.q ( index_home_screen )
 	);
 	
 /////////////////////////
@@ -63,11 +72,30 @@ img_data	img_data_inst (
 	
 //////Color table output
 img_index	img_index_inst (
-	.address ( index ),
+	.address ( index_keyboard ),
 	.clock ( iVGA_CLK ),
-	.q ( bgr_data_raw)
+	.q ( bgr_data_raw_keyboard)
 	);	
+	
+img_index_home_screen	img_index_home_screen_inst (
+	.address ( index_home_screen ),
+	.clock ( iVGA_CLK ),
+	.q ( bgr_data_raw_home_screen)
+	);
+	
 //////
+
+
+/////Begin Mux logic for selecting the image to display
+wire [1:0] select_screen_display; //00 is home, 01 is free play, 10 is learn a song. based on the input
+assign select_screen_display[0] = free_play_button;//using the input pins to assign this value.
+assign select_screen_display[1] = learn_song_button; //using the input pins to assign this value.
+select_display_image select_display_image_init(bgr_data_raw, select_screen_display, bgr_data_raw_home_screen, bgr_data_raw_keyboard);
+
+
+/////End mux logic
+
+
 //////latch valid data at falling edge;
 
 wire [10:0] x, y;

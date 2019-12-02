@@ -353,8 +353,6 @@ set_location_assignment PIN_AB23 -to SW[12]
 set_location_assignment PIN_AA24 -to SW[13]
 set_location_assignment PIN_AA23 -to SW[14]
 set_location_assignment PIN_AA22 -to SW[15]
-set_location_assignment PIN_Y24 -to SW[16]
-set_location_assignment PIN_Y23 -to SW[17]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[10]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[11]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to SW[12]
@@ -1114,6 +1112,8 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name FITTER_EFFORT "FAST FIT"
+set_global_assignment -name MIF_FILE index_home_screen.mif
+set_global_assignment -name MIF_FILE data_home_screen.mif
 set_global_assignment -name VERILOG_FILE video_sync_generator.v
 set_global_assignment -name MIF_FILE index_logo.mif
 set_global_assignment -name VERILOG_FILE vga_controller.v
@@ -1136,4 +1136,9 @@ set_global_assignment -name VERILOG_FILE Audio_Controller/Altera_UP_Audio_Bit_Co
 set_global_assignment -name VERILOG_FILE DE2_Audio_Example.v
 set_global_assignment -name QIP_FILE reallow.qip
 set_global_assignment -name VERILOG_FILE counter.v
+set_global_assignment -name VERILOG_FILE img_data_home_screen.v
+set_global_assignment -name VERILOG_FILE img_index_home_screen.v
+set_global_assignment -name VERILOG_FILE select_display_image.v
+set_location_assignment PIN_Y23 -to free_play_mode
+set_location_assignment PIN_Y24 -to learn_song_mode
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

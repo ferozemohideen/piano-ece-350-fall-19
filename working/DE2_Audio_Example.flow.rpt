@@ -1,5 +1,5 @@
 Flow report for DE2_Audio_Example
-Tue Nov 26 16:11:16 2019
+Mon Dec 02 06:49:07 2019
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,20 +41,20 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Nov 26 16:10:56 2019       ;
+; Flow Status                        ; Successful - Mon Dec 02 06:48:58 2019       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; DE2_Audio_Example                           ;
 ; Top-level Entity Name              ; DE2_Audio_Example                           ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1,241 / 114,480 ( 1 % )                     ;
-;     Total combinational functions  ; 1,214 / 114,480 ( 1 % )                     ;
-;     Dedicated logic registers      ; 317 / 114,480 ( < 1 % )                     ;
-; Total registers                    ; 325                                         ;
-; Total pins                         ; 50 / 529 ( 9 % )                            ;
+; Total logic elements               ; 1,231 / 114,480 ( 1 % )                     ;
+;     Total combinational functions  ; 1,200 / 114,480 ( 1 % )                     ;
+;     Dedicated logic registers      ; 341 / 114,480 ( < 1 % )                     ;
+; Total registers                    ; 349                                         ;
+; Total pins                         ; 52 / 529 ( 10 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 2,471,936 / 3,981,312 ( 62 % )              ;
+; Total memory bits                  ; 1,851,104 / 3,981,312 ( 46 % )              ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
 ; Total PLLs                         ; 2 / 4 ( 50 % )                              ;
 +------------------------------------+---------------------------------------------+
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/26/2019 16:08:00 ;
+; Start date & time ; 12/02/2019 06:47:21 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE2_Audio_Example   ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 74889883291200.157480247915724        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 8796752557187.157526204102628         ; --            ; --          ; --         ;
 ; FITTER_EFFORT                       ; Fast Fit                              ; Auto Fit      ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
@@ -93,11 +93,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:06     ; 1.0                     ; 5053 MB             ; 00:02:04                           ;
-; Fitter                    ; 00:01:16     ; 1.1                     ; 5987 MB             ; 00:01:50                           ;
-; Assembler                 ; 00:00:18     ; 1.0                     ; 4925 MB             ; 00:00:17                           ;
-; TimeQuest Timing Analyzer ; 00:00:17     ; 1.2                     ; 5128 MB             ; 00:00:17                           ;
-; Total                     ; 00:02:57     ; --                      ; --                  ; 00:04:28                           ;
+; Analysis & Synthesis      ; 00:00:44     ; 1.0                     ; 885 MB              ; 00:00:28                           ;
+; Fitter                    ; 00:00:37     ; 1.1                     ; 1732 MB             ; 00:00:23                           ;
+; Assembler                 ; 00:00:06     ; 1.0                     ; 781 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:06     ; 1.3                     ; 966 MB              ; 00:00:04                           ;
+; Total                     ; 00:01:33     ; --                      ; --                  ; 00:00:59                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -106,10 +106,10 @@ agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-KAR5N26  ; Windows 8 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-KAR5N26  ; Windows 8 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-KAR5N26  ; Windows 8 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-KAR5N26  ; Windows 8 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; usama-virt-pc    ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; usama-virt-pc    ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; usama-virt-pc    ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; usama-virt-pc    ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

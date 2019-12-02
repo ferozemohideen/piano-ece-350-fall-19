@@ -20,6 +20,9 @@ module DE2_Audio_Example (
 
 	I2C_SCLK,
 	SW,
+	free_play_mode, //free play mode button assign to SW17
+	learn_song_mode, //learn song mode button assign to SW16
+	
 	
 	VGA_CLK,   														//	VGA Clock
 	VGA_HS,															//	VGA H_SYNC
@@ -44,6 +47,8 @@ input				CLOCK_50;
 input				CLOCK_27;
 input		[3:0]	KEY;
 input		[6:0]	SW;
+input free_play_mode;
+input learn_song_mode;
 output			VGA_CLK;   				//	VGA Clock
 output			VGA_HS;					//	VGA H_SYNC
 output			VGA_VS;					//	VGA V_SYNC
@@ -214,7 +219,12 @@ vga_controller vga_ins(.iRST_n(DLY_RST),
 							 .f(f_note),
 							 .g(g_note),
 							 .a(a_note),
-							 .b(b_note));
+							 .b(b_note),
+							 .free_play_button(free_play_mode),
+							 .learn_song_button(learn_song_mode));
+							 
+
+//Set up IMEM, DMEM, Processor like in skeleton
 
 endmodule
 

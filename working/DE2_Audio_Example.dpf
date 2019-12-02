@@ -2,6 +2,10 @@
 
 <pin_planner>
 	<pin_info>
+		<pin name="SW[16]" source="Pin Planner" >
+		</pin>
+		<pin name="SW[17]" source="Pin Planner" >
+		</pin>
 		<pin name="HSMC_CLKIN_P1" source="Assignments" >
 		</pin>
 		<pin name="HSMC_CLKIN_N1" source="Assignments" >

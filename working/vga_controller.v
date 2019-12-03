@@ -51,6 +51,8 @@ begin
      ADDR<=19'd0;
   else if (cBLANK_n==1'b1)
      ADDR<=ADDR+1;
+  else if (ADDR > 307200) //added this in
+	  ADDR<=19'd0;
 end
 //////////////////////////
 //////INDEX addr.
@@ -91,7 +93,6 @@ wire [1:0] select_screen_display; //00 is home, 01 is free play, 10 is learn a s
 assign select_screen_display[0] = free_play_button;//using the input pins to assign this value.
 assign select_screen_display[1] = learn_song_button; //using the input pins to assign this value.
 select_display_image select_display_image_init(bgr_data_raw, select_screen_display, bgr_data_raw_home_screen, bgr_data_raw_keyboard);
-
 
 /////End mux logic
 

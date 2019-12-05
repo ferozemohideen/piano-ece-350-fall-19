@@ -1,5 +1,5 @@
 EDA Netlist Writer report for skeleton
-Tue Dec 03 14:36:31 2019
+Thu Dec 05 22:34:18 2019
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Dec 03 14:36:31 2019 ;
+; EDA Netlist Writer Status ; Successful - Thu Dec 05 22:34:18 2019 ;
 ; Revision Name             ; skeleton                              ;
 ; Top-level Entity Name     ; skeleton                              ;
 ; Family                    ; Cyclone IV E                          ;
@@ -67,20 +67,20 @@ agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                                            ;
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                                                       ;
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton_7_1200mv_85c_slow.vo     ;
-; C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton_7_1200mv_0c_slow.vo      ;
-; C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton_min_1200mv_0c_fast.vo    ;
-; C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton.vo                       ;
-; C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton_7_1200mv_85c_v_slow.sdo  ;
-; C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton_7_1200mv_0c_v_slow.sdo   ;
-; C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton_min_1200mv_0c_v_fast.sdo ;
-; C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton_v.sdo                    ;
-+---------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                             ;
++------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                        ;
++------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton_7_1200mv_85c_slow.vo     ;
+; C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton_7_1200mv_0c_slow.vo      ;
+; C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton_min_1200mv_0c_fast.vo    ;
+; C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton.vo                       ;
+; C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton_7_1200mv_85c_v_slow.sdo  ;
+; C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton_7_1200mv_0c_v_slow.sdo   ;
+; C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton_min_1200mv_0c_v_fast.sdo ;
+; C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/skeleton_v.sdo                    ;
++------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -89,21 +89,21 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Tue Dec 03 14:36:12 2019
+    Info: Processing started: Thu Dec 05 22:34:15 2019
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off skeleton -c skeleton
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file skeleton_7_1200mv_85c_slow.vo in folder "C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file skeleton_7_1200mv_0c_slow.vo in folder "C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file skeleton_min_1200mv_0c_fast.vo in folder "C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file skeleton.vo in folder "C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file skeleton_7_1200mv_85c_v_slow.sdo in folder "C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file skeleton_7_1200mv_0c_v_slow.sdo in folder "C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file skeleton_min_1200mv_0c_v_fast.sdo in folder "C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file skeleton_v.sdo in folder "C:/Users/Feroze/Google Drive/DUKE 2016-2020/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file skeleton_7_1200mv_85c_slow.vo in folder "C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file skeleton_7_1200mv_0c_slow.vo in folder "C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file skeleton_min_1200mv_0c_fast.vo in folder "C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file skeleton.vo in folder "C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file skeleton_7_1200mv_85c_v_slow.sdo in folder "C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file skeleton_7_1200mv_0c_v_slow.sdo in folder "C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file skeleton_min_1200mv_0c_v_fast.sdo in folder "C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file skeleton_v.sdo in folder "C:/Users/Usama Fayya/Desktop/piano-ece-350-fall-19/working_final/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4916 megabytes
-    Info: Processing ended: Tue Dec 03 14:36:32 2019
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Peak virtual memory: 778 megabytes
+    Info: Processing ended: Thu Dec 05 22:34:18 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

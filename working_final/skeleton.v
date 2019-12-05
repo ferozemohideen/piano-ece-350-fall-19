@@ -14,6 +14,9 @@ module skeleton(start,
 	CLOCK_50,
 	SW,
 	
+	free_play_mode, //free play mode button assign to SW17
+	learn_song_mode, //learn song mode button assign to SW16
+	
 	CLOCK_27,
 	KEY,
 
@@ -45,6 +48,8 @@ module skeleton(start,
 	output	[7:0]	VGA_B;   				//	VGA Blue[9:0]
 	input				CLOCK_50;
 	input		[6:0]	SW;
+	input free_play_mode;
+	input learn_song_mode;
 
 	////////////////////////	PS2	////////////////////////////
 	input 			start;
@@ -117,7 +122,7 @@ module skeleton(start,
 	// VGA
 	Reset_Delay			r0	(.iCLK(CLOCK_50),.oRESET(DLY_RST)	);
 	VGA_Audio_PLL 		p1	(.areset(~DLY_RST),.inclk0(CLOCK_50),.c0(VGA_CTRL_CLK),.c1(AUD_CTRL_CLK),.c2(VGA_CLK)	);
-	vga_controller vga_ins(.iRST_n(DLY_RST),
+	vga_controller vga_ins(.iRST_n(DLY_RST), //pass in c note | other input to just light up 
 								 .iVGA_CLK(VGA_CLK),
 								 .oBLANK_n(VGA_BLANK),
 								 .oHS(VGA_HS),
@@ -138,7 +143,11 @@ module skeleton(start,
 
 							 .a(a_note),
 
-							 .b(b_note));
+							 .b(b_note),
+							 
+							 .free_play_button(free_play_mode), //added for different modes
+							 
+							 .learn_song_button(learn_song_mode));
 							 
 	input				CLOCK_27;
 	input		[3:0]	KEY;

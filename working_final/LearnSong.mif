@@ -1,0 +1,26 @@
+DEPTH = 4096;
+WIDTH = 32;
+ADDRESS_RADIX = DEC;
+DATA_RADIX = BIN;
+CONTENT
+BEGIN
+0000 : 00101000110001100000000000000001; -- addi $3, $3, 1 #initialize register 3 to 1
+
+0001 : 00010000100001111111111111111111; -- bne $2, $3, start # if $2 (learn song mode) is not equal to $3 (1), wait
+
+0002 : 00101010010000000000000000000001; -- addi $9, $0, 1 # register 9 contains address to read from for load instructions. Initialize to 1
+
+0003 : 00101010100000000000000000000101; -- addi $10, $0, 5 # number of notes to read from dmen is set here. 
+
+0004 : Not enough fields provided for this instruction; -- lw $8, ($9)
+
+0005 : 00010010000000111111111111111111; -- bne $8 , $1 , check 			# if the correct key is not pressed, keep waiting until it is.
+
+0006 : 00101010010100100000000000000001; -- addi $9, $9, 1 					# increment dmem address to read from by 1
+
+0007 : Not enough fields provided for this instruction; -- lw $8, ($9) 					# load next note from the song into $8
+
+0008 : 00110010010101011111111111111100; -- blt $9, $10, check				# if the address in $9 is less than $10, wait for next note to be played.
+
+[0009..4095] : 00000000000000000000000000000000;
+END;

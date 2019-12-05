@@ -3,43 +3,43 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'avconf:avc|LUT_INDEX[1]'
-Slack : -3.958
-TNS   : -56.769
+Slack : -3.848
+TNS   : -55.060
 
 Type  : Slow 1200mV 85C Model Setup 'avconf:avc|mI2C_CTRL_CLK'
-Slack : -2.841
-TNS   : -123.527
+Slack : -2.921
+TNS   : -117.508
 
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : -1.381
-TNS   : -1.381
+Slack : -1.292
+TNS   : -1.292
 
 Type  : Slow 1200mV 85C Model Setup 'p1|altpll_component|pll|clk[2]'
-Slack : 9.016
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'avconf:avc|mI2C_CTRL_CLK'
-Slack : 0.196
+Slack : 8.062
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : 0.342
+Slack : 0.366
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'avconf:avc|mI2C_CTRL_CLK'
+Slack : 0.402
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'avconf:avc|LUT_INDEX[1]'
-Slack : 0.371
+Slack : 0.524
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'p1|altpll_component|pll|clk[2]'
-Slack : 0.450
+Slack : 0.627
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'p1|altpll_component|pll|clk[2]'
-Slack : 13.347
+Slack : 12.316
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'p1|altpll_component|pll|clk[2]'
-Slack : 5.322
+Slack : 5.722
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'avconf:avc|mI2C_CTRL_CLK'
@@ -47,55 +47,55 @@ Slack : -1.285
 TNS   : -74.530
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'avconf:avc|LUT_INDEX[1]'
-Slack : 0.365
+Slack : 0.435
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 9.631
+Slack : 9.629
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'p1|altpll_component|pll|clk[2]'
-Slack : 19.708
+Slack : 19.711
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'avconf:avc|LUT_INDEX[1]'
-Slack : -3.609
-TNS   : -51.911
+Slack : -3.531
+TNS   : -50.330
 
 Type  : Slow 1200mV 0C Model Setup 'avconf:avc|mI2C_CTRL_CLK'
-Slack : -2.569
-TNS   : -110.006
+Slack : -2.506
+TNS   : -102.659
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -1.236
-TNS   : -1.236
+Slack : -1.162
+TNS   : -1.162
 
 Type  : Slow 1200mV 0C Model Setup 'p1|altpll_component|pll|clk[2]'
-Slack : 10.016
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'avconf:avc|mI2C_CTRL_CLK'
-Slack : 0.175
+Slack : 8.949
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.349
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'avconf:avc|mI2C_CTRL_CLK'
+Slack : 0.354
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'avconf:avc|LUT_INDEX[1]'
-Slack : 0.380
+Slack : 0.550
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'p1|altpll_component|pll|clk[2]'
-Slack : 0.405
+Slack : 0.577
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'p1|altpll_component|pll|clk[2]'
-Slack : 13.982
+Slack : 13.052
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'p1|altpll_component|pll|clk[2]'
-Slack : 4.704
+Slack : 5.062
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'avconf:avc|mI2C_CTRL_CLK'
@@ -103,55 +103,55 @@ Slack : -1.285
 TNS   : -74.530
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'avconf:avc|LUT_INDEX[1]'
-Slack : 0.382
+Slack : 0.405
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 9.650
+Slack : 9.649
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'p1|altpll_component|pll|clk[2]'
-Slack : 19.710
+Slack : 19.712
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'avconf:avc|LUT_INDEX[1]'
-Slack : -1.490
-TNS   : -20.148
+Slack : -1.402
+TNS   : -18.864
 
 Type  : Fast 1200mV 0C Model Setup 'avconf:avc|mI2C_CTRL_CLK'
-Slack : -1.025
-TNS   : -31.754
+Slack : -1.061
+TNS   : -28.516
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -0.603
-TNS   : -0.603
+Slack : -0.480
+TNS   : -0.480
 
 Type  : Fast 1200mV 0C Model Setup 'p1|altpll_component|pll|clk[2]'
-Slack : 14.492
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'avconf:avc|mI2C_CTRL_CLK'
-Slack : 0.022
+Slack : 13.873
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'avconf:avc|LUT_INDEX[1]'
-Slack : 0.125
+Slack : 0.119
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'avconf:avc|mI2C_CTRL_CLK'
+Slack : 0.132
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.136
+Slack : 0.156
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'p1|altpll_component|pll|clk[2]'
-Slack : 0.204
+Slack : 0.270
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'p1|altpll_component|pll|clk[2]'
-Slack : 16.400
+Slack : 15.864
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'p1|altpll_component|pll|clk[2]'
-Slack : 2.656
+Slack : 2.868
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'avconf:avc|mI2C_CTRL_CLK'
@@ -159,7 +159,7 @@ Slack : -1.000
 TNS   : -58.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'avconf:avc|LUT_INDEX[1]'
-Slack : 0.414
+Slack : 0.457
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
@@ -167,7 +167,7 @@ Slack : 9.374
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'p1|altpll_component|pll|clk[2]'
-Slack : 19.751
+Slack : 19.754
 TNS   : 0.000
 
 ------------------------------------------------------------

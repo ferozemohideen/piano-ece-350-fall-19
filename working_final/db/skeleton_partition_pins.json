@@ -44,62 +44,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "seg1[0]",
-					"strict" : false
-				},
-				{
-					"name" : "seg1[1]",
-					"strict" : false
-				},
-				{
-					"name" : "seg1[2]",
-					"strict" : false
-				},
-				{
-					"name" : "seg1[3]",
-					"strict" : false
-				},
-				{
-					"name" : "seg1[4]",
-					"strict" : false
-				},
-				{
-					"name" : "seg1[5]",
-					"strict" : false
-				},
-				{
-					"name" : "seg1[6]",
-					"strict" : false
-				},
-				{
-					"name" : "seg2[0]",
-					"strict" : false
-				},
-				{
-					"name" : "seg2[1]",
-					"strict" : false
-				},
-				{
-					"name" : "seg2[2]",
-					"strict" : false
-				},
-				{
-					"name" : "seg2[3]",
-					"strict" : false
-				},
-				{
-					"name" : "seg2[4]",
-					"strict" : false
-				},
-				{
-					"name" : "seg2[5]",
-					"strict" : false
-				},
-				{
-					"name" : "seg2[6]",
-					"strict" : false
-				},
-				{
 					"name" : "VGA_HS",
 					"strict" : false
 				},
@@ -144,6 +88,38 @@
 					"strict" : false
 				},
 				{
+					"name" : "VGA_G[0]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[1]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[2]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[3]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[4]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[5]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[6]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[7]",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_B[0]",
 					"strict" : false
 				},
@@ -184,14 +160,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "ps2_clock",
-					"strict" : false
-				},
-				{
-					"name" : "ps2_data",
-					"strict" : false
-				},
-				{
 					"name" : "AUD_BCLK",
 					"strict" : false
 				},
@@ -216,6 +184,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "SW[2]",
+					"strict" : false
+				},
+				{
 					"name" : "SW[6]",
 					"strict" : false
 				},
@@ -232,15 +204,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[2]",
-					"strict" : false
-				},
-				{
 					"name" : "CLOCK_50",
-					"strict" : false
-				},
-				{
-					"name" : "resetn",
 					"strict" : false
 				},
 				{

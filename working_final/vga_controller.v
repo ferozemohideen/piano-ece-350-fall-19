@@ -195,7 +195,7 @@ assign tempb5 = pressed_g ? 8'h80: tempb4;
 assign tempb6 = pressed_a ? 8'h9F: tempb5;
 assign b_data = pressed_b ? 8'hBF: tempb6;
 
-assign g_data = 8'h00;
+assign g_data = (pressed_c | pressed_d | pressed_e | pressed_f | pressed_g | pressed_a | pressed_b) ? 8'h00 : bgr_data[15:8];
 
 wire [7:0] tempr1, tempr2, tempr3, tempr4, tempr5, tempr6;
 assign tempr1 = pressed_c ? 8'hff : bgr_data[7:0];

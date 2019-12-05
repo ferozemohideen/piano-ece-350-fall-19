@@ -1,4 +1,4 @@
-module skeleton(resetn, 
+module skeleton(start, 
 	ps2_clock, ps2_data, 										// ps2 related I/O
 	debug_data_in, debug_addr, leds, 						// extra debugging ports
 	lcd_data, lcd_rw, lcd_en, lcd_rs, lcd_on, lcd_blon,// LCD info
@@ -31,6 +31,7 @@ module skeleton(resetn,
 	AUD_DACDAT,
 
 	I2C_SCLK,
+	
 	);  													// 50 MHz clock
 		
 	////////////////////////	VGA	////////////////////////////
@@ -46,7 +47,7 @@ module skeleton(resetn,
 	input		[6:0]	SW;
 
 	////////////////////////	PS2	////////////////////////////
-	input 			resetn;
+	input 			start;
 	inout 			ps2_data, ps2_clock;
 	
 	////////////////////////	LCD and Seven Segment	////////////////////////////
@@ -172,6 +173,8 @@ module skeleton(resetn,
 	wire				write_audio_out;
 	
 	reg [31:0] add0, add1, add2, add3, add4, add5, add6, metVal, cnt0, cnt1, cnt2, cnt3, cnt4, cnt5, cnt6;
+	
+	reg [31:0] counter;
 	 initial begin
 		add0 <= 32'b0;
 		add1 <= 32'b0;
@@ -188,7 +191,9 @@ module skeleton(resetn,
 		cnt4 <= 32'b0;
 		cnt5 <= 32'b0;
 		cnt6 <= 32'b0;
-
+		
+//		play_c <= 1'b0;
+//		counter <= 32'b0;
 		
 	 end
 
@@ -200,7 +205,7 @@ module skeleton(resetn,
 
 	always @(posedge CLOCK_50) begin
 		// c
-		if (SW[6] & ~SW[5] & ~SW[4] & ~SW[3] & ~SW[2] & ~SW[1] & ~SW[0]) begin
+		if (SW[6]) begin
 			cnt0 <= cnt0+1;
 			if (cnt0 >= 32'd96000) begin
 				cnt0 <= 0;
@@ -215,8 +220,16 @@ module skeleton(resetn,
 			add0 <= 32'd0;
 		end
 		
+//		if (play_c) begin
+//			counter <= counter + 1;
+//			if (counter >= 32'd50000000) begin
+//				counter <= 0;
+//				play_c <= 1'b0;
+//			end
+//		end
+		
 		// d
-		if (~SW[6] & SW[5] & ~SW[4] & ~SW[3] & ~SW[2] & ~SW[1] & ~SW[0]) begin
+		if (SW[5]) begin
 			cnt1 <= cnt1+1;
 			if (cnt1 >= 32'd86000) begin
 				cnt1 <= 0;
@@ -232,7 +245,7 @@ module skeleton(resetn,
 		end
 		
 		// e
-		if (~SW[6] & ~SW[5] & SW[4] & ~SW[3] & ~SW[2] & ~SW[1] & ~SW[0]) begin
+		if (SW[4]) begin
 			cnt2 <= cnt2+1;
 			if (cnt2 >= 32'd76000) begin
 				cnt2 <= 0;
@@ -248,7 +261,7 @@ module skeleton(resetn,
 		end
 		
 		// f
-		if (~SW[6] & ~SW[5] & ~SW[4] & SW[3] & ~SW[2] & ~SW[1] & ~SW[0]) begin
+		if (SW[3]) begin
 			cnt3 <= cnt3+1;
 			if (cnt3 >= 32'd71500) begin
 				cnt3 <= 0;
@@ -264,7 +277,7 @@ module skeleton(resetn,
 		end
 		
 		// g
-		if (~SW[6] & ~SW[5] & ~SW[4] & ~SW[3] & SW[2] & ~SW[1] & ~SW[0]) begin
+		if (SW[2]) begin
 			cnt4 <= cnt4+1;
 			if (cnt4 >= 32'd64000) begin
 				cnt4 <= 0;
@@ -280,7 +293,7 @@ module skeleton(resetn,
 		end
 		
 		// a
-		if (~SW[6] & ~SW[5] & ~SW[4] & ~SW[3] & ~SW[2] & SW[1] & ~SW[0]) begin
+		if (SW[1]) begin
 			cnt5 <= cnt5+1;
 			if (cnt5 >= 32'd57000) begin
 				cnt5 <= 0;
@@ -296,7 +309,7 @@ module skeleton(resetn,
 		end
 		
 		// b
-		if (~SW[6] & ~SW[5] & ~SW[4] & ~SW[3] & ~SW[2] & ~SW[1] & SW[0]) begin
+		if (SW[0]) begin
 			cnt6 <= cnt6+1;
 			if (cnt6 >= 32'd51000) begin
 				cnt6 <= 0;
@@ -383,4 +396,81 @@ module skeleton(resetn,
 		.key2							(KEY[2])
 	);
 	
+//	reg play_c;
+//	
+//	always @(posedge start) begin
+//		play_c <= 1'b1;
+//	end
+
+///////// PROCESSOR SHIT //////////////////////////////////////////////////////////////////////////////////////////
+	wire reset;
+	/** IMEM **/
+    // Figure out how to generate a Quartus syncram component and commit the generated verilog file.
+    // Make sure you configure it correctly!
+    wire [11:0] address_imem;
+    wire [31:0] q_imem;
+    imem my_imem(
+        .address    (address_imem),            // address of data
+        .clock      (clock),                  // you may need to invert the clock
+        .q          (q_imem)                   // the raw instruction
+    );
+
+    /** DMEM **/
+    // Figure out how to generate a Quartus syncram component and commit the generated verilog file.
+    // Make sure you configure it correctly!
+    wire [11:0] address_dmem;
+    wire [31:0] data;
+    wire wren;
+    wire [31:0] q_dmem;
+    dmem my_dmem(
+        .address    (address_dmem),       // address of data
+        .clock      (clock),                  // may need to invert the clock
+        .data	    (data),    // data you want to write
+        .wren	    (wren),      // write enable
+        .q          (q_dmem)    // data from dmem
+    );
+
+    /** REGFILE **/
+    // Instantiate your regfile
+    wire ctrl_writeEnable;
+    wire [4:0] ctrl_writeReg, ctrl_readRegA, ctrl_readRegB;
+    wire [31:0] data_writeReg;
+    wire [31:0] data_readRegA, data_readRegB;
+    regfile my_regfile(
+        clock,
+        ctrl_writeEnable,
+        reset,
+        ctrl_writeReg,
+        ctrl_readRegA,
+        ctrl_readRegB,
+        data_writeReg,
+        data_readRegA,
+        data_readRegB
+    );
+
+    /** PROCESSOR **/
+    processor my_processor(
+        // Control signals
+        ~clock,                          // I: The master clock
+        reset,                          // I: A reset signal
+
+        // Imem
+        address_imem,                   // O: The address of the data to get from imem
+        q_imem,                         // I: The data from imem
+
+        // Dmem
+        address_dmem,                   // O: The address of the data to get or put from/to dmem
+        data,                           // O: The data to write to dmem
+        wren,                           // O: Write enable for dmem
+        q_dmem,                         // I: The data from dmem
+
+        // Regfile
+        ctrl_writeEnable,               // O: Write enable for regfile
+        ctrl_writeReg,                  // O: Register to write to in regfile
+        ctrl_readRegA,                  // O: Register to read from port A of regfile
+        ctrl_readRegB,                  // O: Register to read from port B of regfile
+        data_writeReg,                  // O: Data to write to for regfile
+        data_readRegA,                  // I: Data from port A of regfile
+        data_readRegB,                   // I: Data from port B of regfile
+    );
 endmodule

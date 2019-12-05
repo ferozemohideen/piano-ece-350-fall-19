@@ -459,6 +459,9 @@ module skeleton(start,
 	 
 	 wire [31:0] register_eight_output; //This is the value in register 8 at all times
 	 wire [6:0] key_to_highlight;
+	 wire [31:0] register_two_input;
+	 assign register_two_input[0] = learn_song_mode;
+	 assign register_two_input[31:1] = 31'b0;
 	 assign key_to_highlight[6:0] = register_eight_output[6:0]; //in learn a song mode, register 8 output as the key to highlight
 	 
     regfile my_regfile(
@@ -473,6 +476,7 @@ module skeleton(start,
         data_readRegB,
 		  key_currently_pressed, //which key is the user currently pressing
 		  register_eight_output, //Which key to HIGHLIGHT
+		  register_two_input
     );
 
     /** PROCESSOR **/

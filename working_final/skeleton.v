@@ -35,7 +35,14 @@ module skeleton(start,
 
 	I2C_SCLK,
 	
+	//TEST OUTPUTS
+	note_highlighted
+	
 	);  													// 50 MHz clock
+	
+	//Test outputs
+	output [6:0] note_highlighted;
+	assign note_highlighted = key_to_highlight;
 		
 	////////////////////////	VGA	////////////////////////////
 	output			VGA_CLK;   				//	VGA Clock
@@ -122,7 +129,7 @@ module skeleton(start,
 	// VGA
 	Reset_Delay			r0	(.iCLK(CLOCK_50),.oRESET(DLY_RST)	);
 	VGA_Audio_PLL 		p1	(.areset(~DLY_RST),.inclk0(CLOCK_50),.c0(VGA_CTRL_CLK),.c1(AUD_CTRL_CLK),.c2(VGA_CLK)	);
-	vga_controller vga_ins(.iRST_n(DLY_RST), //pass in c note | other input to just light up 
+	vga_controller vga_ins(.iRST_n(DLY_RST), 
 								 .iVGA_CLK(VGA_CLK),
 								 .oBLANK_n(VGA_BLANK),
 								 .oHS(VGA_HS),
@@ -131,19 +138,19 @@ module skeleton(start,
 								 .g_data(VGA_G),
 								 .r_data(VGA_R),
 								 
-							 .c(c_note),
+							 .c(c_note | key_to_highlight[6]), //pass in c note | other input to just light up 
 
-							 .d(d_note),
+							 .d(d_note | key_to_highlight[5]),
 
-							 .e(e_note),
+							 .e(e_note | key_to_highlight[4]),
 
-							 .f(f_note),
+							 .f(f_note | key_to_highlight[3]),
 
-							 .g(g_note),
+							 .g(g_note | key_to_highlight[2]),
 
-							 .a(a_note),
+							 .a(a_note | key_to_highlight[1]),
 
-							 .b(b_note),
+							 .b(b_note | key_to_highlight[0]),
 							 
 							 .free_play_button(free_play_mode), //added for different modes
 							 
@@ -445,6 +452,15 @@ module skeleton(start,
     wire [4:0] ctrl_writeReg, ctrl_readRegA, ctrl_readRegB;
     wire [31:0] data_writeReg;
     wire [31:0] data_readRegA, data_readRegB;
+	 
+	 wire [31:0] key_currently_pressed;
+	 assign key_currently_pressed[6:0] = SW;
+	 assign key_currently_pressed[31:7] = 15'b0;
+	 
+	 wire [31:0] register_eight_output; //This is the value in register 8 at all times
+	 wire [6:0] key_to_highlight;
+	 assign key_to_highlight[6:0] = register_eight_output[6:0]; //in learn a song mode, register 8 output as the key to highlight
+	 
     regfile my_regfile(
         clock,
         ctrl_writeEnable,
@@ -454,7 +470,9 @@ module skeleton(start,
         ctrl_readRegB,
         data_writeReg,
         data_readRegA,
-        data_readRegB
+        data_readRegB,
+		  key_currently_pressed, //which key is the user currently pressing
+		  register_eight_output, //Which key to HIGHLIGHT
     );
 
     /** PROCESSOR **/

@@ -208,6 +208,34 @@
 					"strict" : false
 				},
 				{
+					"name" : "note_highlighted[0]",
+					"strict" : false
+				},
+				{
+					"name" : "note_highlighted[1]",
+					"strict" : false
+				},
+				{
+					"name" : "note_highlighted[2]",
+					"strict" : false
+				},
+				{
+					"name" : "note_highlighted[3]",
+					"strict" : false
+				},
+				{
+					"name" : "note_highlighted[4]",
+					"strict" : false
+				},
+				{
+					"name" : "note_highlighted[5]",
+					"strict" : false
+				},
+				{
+					"name" : "note_highlighted[6]",
+					"strict" : false
+				},
+				{
 					"name" : "AUD_BCLK",
 					"strict" : false
 				},
@@ -224,6 +252,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "SW[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[2]",
+					"strict" : false
+				},
+				{
 					"name" : "SW[4]",
 					"strict" : false
 				},
@@ -232,23 +268,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[2]",
-					"strict" : false
-				},
-				{
 					"name" : "SW[6]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[5]",
+					"name" : "SW[1]",
 					"strict" : false
 				},
 				{
 					"name" : "SW[0]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[1]",
 					"strict" : false
 				},
 				{

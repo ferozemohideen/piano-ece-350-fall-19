@@ -10,7 +10,7 @@ BEGIN
 
 0002 : 00101010010000000000000000000001; -- addi $9, $0, 1 # register 9 contains address to read from for load instructions. Initialize to 1
 
-0003 : 00101010100000000000000000000101; -- addi $10, $0, 5 # number of notes to read from dmen is set here. 
+0003 : 00101010100000000000000000111000; -- addi $10, $0, 56 # number of notes to read from dmen is set here. 
 
 0004 : 01000010000100100000000000000000; -- lw $8, 0($9)
 
@@ -22,5 +22,9 @@ BEGIN
 
 0008 : 00110010010101011111111111111100; -- blt $9, $10, check				# if the address in $9 is less than $10, wait for next note to be played.
 
-[0009..4095] : 00000000000000000000000000000000;
+0009 : 00000010000000000000000000000000; -- add $8, $0, $0								# Otherwise end of song is reached.
+
+0010 : 00010000100001111111111111110110; -- bne $2, $3, start
+
+[0011..4095] : 00000000000000000000000000000000;
 END;

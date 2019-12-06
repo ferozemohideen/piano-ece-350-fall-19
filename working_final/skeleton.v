@@ -138,19 +138,19 @@ module skeleton(start,
 								 .g_data(VGA_G),
 								 .r_data(VGA_R),
 								 
-							 .c(c_note | key_to_highlight[6]), //pass in c note | other input to just light up 
+							 .c(c_note | (key_to_highlight[6]& learn_song_mode)), //pass in c note | other input to just light up 
 
-							 .d(d_note | key_to_highlight[5]),
+							 .d(d_note | (key_to_highlight[5]& learn_song_mode)),
 
-							 .e(e_note | key_to_highlight[4]),
+							 .e(e_note | (key_to_highlight[4]& learn_song_mode)),
 
-							 .f(f_note | key_to_highlight[3]),
+							 .f(f_note | (key_to_highlight[3]& learn_song_mode)),
 
-							 .g(g_note | key_to_highlight[2]),
+							 .g(g_note | (key_to_highlight[2]& learn_song_mode)),
 
-							 .a(a_note | key_to_highlight[1]),
+							 .a(a_note | (key_to_highlight[1]& learn_song_mode)),
 
-							 .b(b_note | key_to_highlight[0]),
+							 .b(b_note | (key_to_highlight[0]& learn_song_mode)),
 							 
 							 .free_play_button(free_play_mode), //added for different modes
 							 
@@ -455,7 +455,7 @@ module skeleton(start,
 	 
 	 wire [31:0] key_currently_pressed;
 	 assign key_currently_pressed[6:0] = SW;
-	 assign key_currently_pressed[31:7] = 15'b0;
+	 assign key_currently_pressed[31:7] = 25'b0;
 	 
 	 wire [31:0] register_eight_output; //This is the value in register 8 at all times
 	 wire [6:0] key_to_highlight;

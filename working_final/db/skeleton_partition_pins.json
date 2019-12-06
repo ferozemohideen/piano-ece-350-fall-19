@@ -252,11 +252,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[2]",
+					"name" : "SW[5]",
 					"strict" : false
 				},
 				{
 					"name" : "learn_song_mode",
+					"strict" : false
+				},
+				{
+					"name" : "start_play_song",
+					"strict" : false
+				},
+				{
+					"name" : "SW[2]",
 					"strict" : false
 				},
 				{
@@ -280,11 +288,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[5]",
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
+					"name" : "start",
 					"strict" : false
 				},
 				{

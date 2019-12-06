@@ -30,7 +30,9 @@ module vga_controller(iRST_n,
 							 
 							 free_play_button,
 							 
-							 learn_song_button);
+							 learn_song_button,
+							 
+							 play_mary_button);
 
 
 
@@ -41,7 +43,7 @@ input iRST_n;
 input iVGA_CLK;
 
 input c, d, e, f, g, a, b;
-input free_play_button, learn_song_button;
+input free_play_button, learn_song_button, play_mary_button;
 
 output reg oBLANK_n;
 
@@ -151,9 +153,10 @@ img_index_lamb	img_index_home_screen_inst (
 
 
 /////Begin Mux logic for selecting the image to display
-wire [1:0] select_screen_display; //00 is home, 01 is free play, 10 is learn a song. based on the input
+wire [2:0] select_screen_display; //00 is home, 01 is free play, 10 is learn a song. based on the input
 assign select_screen_display[0] = free_play_button;//using the input pins to assign this value.
 assign select_screen_display[1] = learn_song_button; //using the input pins to assign this value.
+assign select_screen_display[2] = play_mary_button; //using the input pins to assign this value.
 select_display_image select_display_image_init(bgr_data_raw, select_screen_display, bgr_data_raw_home_screen, bgr_data_raw_keyboard);
 
 /////End mux logic

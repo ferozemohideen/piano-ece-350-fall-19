@@ -16,6 +16,7 @@ module skeleton(start,
 	
 	free_play_mode, //free play mode button assign to SW17
 	learn_song_mode, //learn song mode button assign to SW16
+	start_play_song,
 	
 	CLOCK_27,
 	KEY,
@@ -56,7 +57,7 @@ module skeleton(start,
 	input				CLOCK_50;
 	input		[6:0]	SW;
 	input free_play_mode;
-	input learn_song_mode;
+	input learn_song_mode, start_play_song;
 
 	////////////////////////	PS2	////////////////////////////
 	input 			start;
@@ -138,23 +139,24 @@ module skeleton(start,
 								 .g_data(VGA_G),
 								 .r_data(VGA_R),
 								 
-							 .c(c_note | (key_to_highlight[6]& learn_song_mode)), //pass in c note | other input to just light up 
+							 .c(c_note | (key_to_highlight[6]& learn_song_mode)| (play_mary[6]& start_play_song)), //pass in c note | other input to just light up 
 
-							 .d(d_note | (key_to_highlight[5]& learn_song_mode)),
+							 .d(d_note | (key_to_highlight[5]& learn_song_mode)| (play_mary[5]& start_play_song)),
 
-							 .e(e_note | (key_to_highlight[4]& learn_song_mode)),
+							 .e(e_note | (key_to_highlight[4]& learn_song_mode)| (play_mary[4]& start_play_song)),
 
-							 .f(f_note | (key_to_highlight[3]& learn_song_mode)),
+							 .f(f_note | (key_to_highlight[3]& learn_song_mode)| (play_mary[3]& start_play_song)),
 
-							 .g(g_note | (key_to_highlight[2]& learn_song_mode)),
+							 .g(g_note | (key_to_highlight[2]& learn_song_mode)| (play_mary[2]& start_play_song)),
 
-							 .a(a_note | (key_to_highlight[1]& learn_song_mode)),
+							 .a(a_note | (key_to_highlight[1]& learn_song_mode)| (play_mary[1]& start_play_song)),
 
-							 .b(b_note | (key_to_highlight[0]& learn_song_mode)),
+							 .b(b_note | (key_to_highlight[0]& learn_song_mode)| (play_mary[0]& start_play_song)),
 							 
 							 .free_play_button(free_play_mode), //added for different modes
 							 
-							 .learn_song_button(learn_song_mode));
+							 .learn_song_button(learn_song_mode),
+							 .play_mary_button(start_play_song));
 							 
 	input				CLOCK_27;
 	input		[3:0]	KEY;
@@ -190,7 +192,7 @@ module skeleton(start,
 	
 	reg [31:0] add0, add1, add2, add3, add4, add5, add6, metVal, cnt0, cnt1, cnt2, cnt3, cnt4, cnt5, cnt6;
 	
-	reg [31:0] counter;
+//	reg [31:0] counter;
 	 initial begin
 		add0 <= 32'b0;
 		add1 <= 32'b0;
@@ -210,6 +212,7 @@ module skeleton(start,
 		
 //		play_c <= 1'b0;
 //		counter <= 32'b0;
+		counter <= 8'd100;
 		
 	 end
 
@@ -218,128 +221,272 @@ module skeleton(start,
 	 *                         LAB 6 SOUNDS END HERE                              *
 
 	 *****************************************************************************/
+reg [25:0] slow_clk;
+
+	reg [7:0] counter;
+
+	
 
 	always @(posedge CLOCK_50) begin
+
 		// c
-		if (SW[6]) begin
+
+		if (SW[6] | play_mary[6]) begin
+
 			cnt0 <= cnt0+1;
+
 			if (cnt0 >= 32'd96000) begin
+
 				cnt0 <= 0;
+
 				if (add0 == 32'd100000000) begin
+
 					add0 <= -32'd100000000;
+
 				end
+
 				else begin
+
 					add0 <= 32'd100000000;
+
 				end
+
 			end
+
 		end else begin
+
 			add0 <= 32'd0;
+
 		end
+
 		
-//		if (play_c) begin
-//			counter <= counter + 1;
-//			if (counter >= 32'd50000000) begin
-//				counter <= 0;
-//				play_c <= 1'b0;
-//			end
-//		end
+
 		
+
+		
+
+		if (slow_clk == 26'd25000000) begin
+
+			if (start) begin
+				counter <= 0;
+			end
+
+			else if (counter == 8'd255) begin
+
+				counter <= 8'd70;
+
+			end
+
+			else begin
+
+				counter <= counter + 8'b1;
+
+			end
+
+        slow_clk <= 0;
+
+		end
+
+		 else begin
+
+			  slow_clk <= slow_clk + 1'b1;
+
+		 end
+
+		
+
 		// d
-		if (SW[5]) begin
+
+		if (SW[5] | play_mary[5]) begin
+
 			cnt1 <= cnt1+1;
+
 			if (cnt1 >= 32'd86000) begin
+
 				cnt1 <= 0;
+
 				if (add1 == 32'd100000000) begin
+
 					add1 <= -32'd100000000;
+
 				end
+
 				else begin
+
 					add1 <= 32'd100000000;
+
 				end
+
 			end
+
 		end else begin
+
 			add1 <= 32'd0;
+
 		end
+
 		
+
 		// e
-		if (SW[4]) begin
+
+		if (SW[4] | play_mary[4]) begin
+
 			cnt2 <= cnt2+1;
+
 			if (cnt2 >= 32'd76000) begin
+
 				cnt2 <= 0;
+
 				if (add2 == 32'd100000000) begin
+
 					add2 <= -32'd100000000;
+
 				end
+
 				else begin
+
 					add2 <= 32'd100000000;
+
 				end
+
 			end
+
 		end else begin
+
 			add2 <= 32'd0;
+
 		end
+
 		
+
 		// f
-		if (SW[3]) begin
+
+		if (SW[3] | play_mary[3]) begin
+
 			cnt3 <= cnt3+1;
+
 			if (cnt3 >= 32'd71500) begin
+
 				cnt3 <= 0;
+
 				if (add3 == 32'd100000000) begin
+
 					add3 <= -32'd100000000;
+
 				end
+
 				else begin
+
 					add3 <= 32'd100000000;
+
 				end
+
 			end
+
 		end else begin
+
 			add3 <= 32'd0;
+
 		end
+
 		
+
 		// g
-		if (SW[2]) begin
+
+		if (SW[2] | play_mary[2]) begin
+
 			cnt4 <= cnt4+1;
+
 			if (cnt4 >= 32'd64000) begin
+
 				cnt4 <= 0;
+
 				if (add4 == 32'd100000000) begin
+
 					add4 <= -32'd100000000;
+
 				end
+
 				else begin
+
 					add4 <= 32'd100000000;
+
 				end
+
 			end
+
 		end else begin
+
 			add4 <= 32'd0;
+
 		end
+
 		
+
 		// a
-		if (SW[1]) begin
+
+		if (SW[1] | play_mary[1]) begin
+
 			cnt5 <= cnt5+1;
+
 			if (cnt5 >= 32'd57000) begin
+
 				cnt5 <= 0;
+
 				if (add5 == 32'd100000000) begin
+
 					add5 <= -32'd100000000;
+
 				end
+
 				else begin
+
 					add5 <= 32'd100000000;
+
 				end
+
 			end
+
 		end else begin
+
 			add5 <= 32'd0;
+
 		end
+
 		
+
 		// b
-		if (SW[0]) begin
+
+		if (SW[0] | play_mary[0]) begin
+
 			cnt6 <= cnt6+1;
+
 			if (cnt6 >= 32'd51000) begin
+
 				cnt6 <= 0;
+
 				if (add6 == 32'd100000000) begin
+
 					add6 <= -32'd100000000;
+
 				end
+
 				else begin
+
 					add6 <= 32'd100000000;
+
 				end
+
 			end
+
 		end else begin
+
 			add6 <= 32'd0;
+
 		end
+
 		
+
 	end
 
 
@@ -417,6 +564,178 @@ module skeleton(start,
 //	always @(posedge start) begin
 //		play_c <= 1'b1;
 //	end
+
+wire [6:0] play_mary;
+
+	assign play_mary = (counter == 8'd1) ? 7'b0010000 : // e d c d e e e, 
+
+												(counter == 8'd2) ? 7'b0 :
+
+	 
+
+						 (counter == 8'd3) ? 7'b0100000 :
+
+						 						 (counter == 8'd4) ? 7'b0 :
+
+
+
+						 (counter == 8'd5) ? 7'b1000000 : 
+
+						 						 (counter == 8'd6) ? 7'b0 :
+
+
+
+						 (counter == 8'd7) ? 7'b0100000 : 
+
+						 						 (counter == 8'd8) ? 7'b0 :
+
+
+
+						 (counter == 8'd9) ? 7'b0010000 : 
+
+						 						 (counter == 8'd10) ? 7'b0 :
+
+
+
+						 (counter == 8'd11) ? 7'b0010000 : 
+
+						 						 (counter == 8'd12) ? 7'b0 :
+
+
+
+						 (counter == 8'd13) ? 7'b0010000 : 
+
+												(counter == 8'd14) ? 7'b0 :
+
+												
+
+						 (counter == 8'd15) ? 7'b0 : //REST
+
+	 
+
+						 (counter == 8'd16) ? 7'b0100000 :
+
+						 						 (counter == 8'd17) ? 7'b0 :
+
+
+
+						 (counter == 8'd18) ? 7'b0100000 : 
+
+						 						 (counter == 8'd19) ? 7'b0 :
+
+
+
+						 (counter == 8'd20) ? 7'b0100000 : 
+
+						 						 (counter == 8'd21) ? 7'b0 :
+
+												 
+
+						 (counter == 8'd22) ? 7'b0 : //REST
+
+
+
+						 (counter == 8'd23) ? 7'b0010000 : 
+
+						 						 (counter == 8'd24) ? 7'b0 :
+
+
+
+						 (counter == 8'd25) ? 7'b0000100 : 
+
+						 						 (counter == 8'd26) ? 7'b0 :
+
+						 (counter == 8'd27) ? 7'b0000100 :
+
+						 						 (counter == 8'd28) ? 7'b0 :
+
+												 
+
+						(counter == 8'd29) ? 7'b0 : //REST
+
+
+
+
+
+						 (counter == 8'd30) ? 7'b0010000 : 
+
+						 						 (counter == 8'd31) ? 7'b0 :
+
+
+
+						 (counter == 8'd32) ? 7'b0100000 : 
+
+						 						 (counter == 8'd33) ? 7'b0 :
+
+
+
+						 (counter == 8'd34) ? 7'b1000000 : 
+
+						 						 (counter == 8'd35) ? 7'b0 :
+
+
+
+						 (counter == 8'd36) ? 7'b0100000 : 
+
+						 						 (counter == 8'd37) ? 7'b0 :
+
+
+
+						 (counter == 8'd38) ? 7'b0010000 : 
+
+												(counter == 8'd39) ? 7'b0 :
+
+	 
+
+						 (counter == 8'd40) ? 7'b0010000 :
+
+						 						 (counter == 8'd41) ? 7'b0 :
+
+
+
+						 (counter == 8'd42) ? 7'b0010000 : 
+
+						 						 (counter == 8'd43) ? 7'b0 :
+
+
+
+						 (counter == 8'd44) ? 7'b0010000 : 
+
+						 						 (counter == 8'd45) ? 7'b0 :
+
+
+
+						 (counter == 8'd46) ? 7'b0100000 : 
+
+						 						 (counter == 8'd47) ? 7'b0 :
+
+
+
+						 (counter == 8'd48) ? 7'b0100000 : 
+
+						 						 (counter == 8'd49) ? 7'b0 :
+
+						 (counter == 8'd50) ? 7'b0010000 : 
+
+						 						 (counter == 8'd51) ? 7'b0 :
+
+
+
+						 (counter == 8'd52) ? 7'b0100000 : 
+
+						 						 (counter == 8'd53) ? 7'b0 :
+
+
+
+						 (counter == 8'd54) ? 7'b1000000 : 
+
+						 						 (counter == 8'd55) ? 7'b0 :
+
+						 7'b0;
+
+
+
+
 
 ///////// PROCESSOR SHIT //////////////////////////////////////////////////////////////////////////////////////////
 	wire reset;

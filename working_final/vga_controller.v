@@ -114,7 +114,12 @@ img_data	img_data_inst (
 	.q ( index_keyboard )
 	);
 
-img_data_home_screen	img_data_home_screen_inst (
+//img_data_home_screen	img_data_home_screen_inst (
+//	.address ( ADDR ),
+//	.clock ( VGA_CLK_n ),
+//	.q ( index_home_screen )
+//	);
+img_data_lamb	img_data_home_screen_inst (
 	.address ( ADDR ),
 	.clock ( VGA_CLK_n ),
 	.q ( index_home_screen )
@@ -129,8 +134,13 @@ img_index	img_index_inst (
 	.clock ( iVGA_CLK ),
 	.q ( bgr_data_raw_keyboard)
 	);	
-	
-img_index_home_screen	img_index_home_screen_inst (
+//	
+//img_index_home_screen	img_index_home_screen_inst (
+//	.address ( index_home_screen ),
+//	.clock ( iVGA_CLK ),
+//	.q ( bgr_data_raw_home_screen)
+//	);
+img_index_lamb	img_index_home_screen_inst (
 	.address ( index_home_screen ),
 	.clock ( iVGA_CLK ),
 	.q ( bgr_data_raw_home_screen)

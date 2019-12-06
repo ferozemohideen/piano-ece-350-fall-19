@@ -58,9 +58,9 @@ module skeleton(start,
 	output   [11:0]   debug_addr;
 	
 	
-	 wire c_note, d_note, e_note, f_note, g_note, a_note, b_note;
+	wire c_note, d_note, e_note, f_note, g_note, a_note, b_note;
 
-	 assign c_note = SW[6];
+	assign c_note = SW[6];
 
 	assign d_note = SW[5];
 
@@ -126,19 +126,19 @@ module skeleton(start,
 								 .g_data(VGA_G),
 								 .r_data(VGA_R),
 								 
-							 .c(c_note),
+							 .c(c_note | play_mary[6]),
 
-							 .d(d_note),
+							 .d(d_note | play_mary[5]),
 
-							 .e(e_note),
+							 .e(e_note | play_mary[4]),
 
-							 .f(f_note),
+							 .f(f_note | play_mary[3]),
 
-							 .g(g_note),
+							 .g(g_note | play_mary[2]),
 
-							 .a(a_note),
+							 .a(a_note | play_mary[1]),
 
-							 .b(b_note));
+							 .b(b_note | play_mary[0]));
 							 
 	input				CLOCK_27;
 	input		[3:0]	KEY;
@@ -174,7 +174,7 @@ module skeleton(start,
 	
 	reg [31:0] add0, add1, add2, add3, add4, add5, add6, metVal, cnt0, cnt1, cnt2, cnt3, cnt4, cnt5, cnt6;
 	
-	reg [31:0] counter;
+//	reg [31:0] counter;
 	 initial begin
 		add0 <= 32'b0;
 		add1 <= 32'b0;
@@ -193,7 +193,7 @@ module skeleton(start,
 		cnt6 <= 32'b0;
 		
 //		play_c <= 1'b0;
-//		counter <= 32'b0;
+		counter <= 8'd100;
 		
 	 end
 
@@ -202,10 +202,12 @@ module skeleton(start,
 	 *                         LAB 6 SOUNDS END HERE                              *
 
 	 *****************************************************************************/
-
+	reg [25:0] slow_clk;
+	reg [7:0] counter;
+	
 	always @(posedge CLOCK_50) begin
 		// c
-		if (SW[6]) begin
+		if (SW[6] | play_mary[6]) begin
 			cnt0 <= cnt0+1;
 			if (cnt0 >= 32'd96000) begin
 				cnt0 <= 0;
@@ -220,16 +222,26 @@ module skeleton(start,
 			add0 <= 32'd0;
 		end
 		
-//		if (play_c) begin
-//			counter <= counter + 1;
-//			if (counter >= 32'd50000000) begin
-//				counter <= 0;
-//				play_c <= 1'b0;
-//			end
-//		end
+		
+		
+		if (slow_clk == 26'd25000000) begin
+			if (start) begin
+				counter <= 0;
+			end
+			else if (counter == 8'd255) begin
+				counter <= 8'd70;
+			end
+			else begin
+				counter <= counter + 8'b1;
+			end
+        slow_clk <= 0;
+		end
+		 else begin
+			  slow_clk <= slow_clk + 1'b1;
+		 end
 		
 		// d
-		if (SW[5]) begin
+		if (SW[5] | play_mary[5]) begin
 			cnt1 <= cnt1+1;
 			if (cnt1 >= 32'd86000) begin
 				cnt1 <= 0;
@@ -245,7 +257,7 @@ module skeleton(start,
 		end
 		
 		// e
-		if (SW[4]) begin
+		if (SW[4] | play_mary[4]) begin
 			cnt2 <= cnt2+1;
 			if (cnt2 >= 32'd76000) begin
 				cnt2 <= 0;
@@ -261,7 +273,7 @@ module skeleton(start,
 		end
 		
 		// f
-		if (SW[3]) begin
+		if (SW[3] | play_mary[3]) begin
 			cnt3 <= cnt3+1;
 			if (cnt3 >= 32'd71500) begin
 				cnt3 <= 0;
@@ -277,7 +289,7 @@ module skeleton(start,
 		end
 		
 		// g
-		if (SW[2]) begin
+		if (SW[2] | play_mary[2]) begin
 			cnt4 <= cnt4+1;
 			if (cnt4 >= 32'd64000) begin
 				cnt4 <= 0;
@@ -293,7 +305,7 @@ module skeleton(start,
 		end
 		
 		// a
-		if (SW[1]) begin
+		if (SW[1] | play_mary[1]) begin
 			cnt5 <= cnt5+1;
 			if (cnt5 >= 32'd57000) begin
 				cnt5 <= 0;
@@ -309,7 +321,7 @@ module skeleton(start,
 		end
 		
 		// b
-		if (SW[0]) begin
+		if (SW[0] | play_mary[0]) begin
 			cnt6 <= cnt6+1;
 			if (cnt6 >= 32'd51000) begin
 				cnt6 <= 0;
@@ -396,11 +408,91 @@ module skeleton(start,
 		.key2							(KEY[2])
 	);
 	
-//	reg play_c;
-//	
-//	always @(posedge start) begin
-//		play_c <= 1'b1;
-//	end
+	wire [6:0] play_mary;
+	assign play_mary = (counter == 8'd1) ? 7'b0010000 : // e d c d e e e, 
+												(counter == 8'd2) ? 7'b0 :
+	 
+						 (counter == 8'd3) ? 7'b0100000 :
+						 						 (counter == 8'd4) ? 7'b0 :
+
+						 (counter == 8'd5) ? 7'b1000000 : 
+						 						 (counter == 8'd6) ? 7'b0 :
+
+						 (counter == 8'd7) ? 7'b0100000 : 
+						 						 (counter == 8'd8) ? 7'b0 :
+
+						 (counter == 8'd9) ? 7'b0010000 : 
+						 						 (counter == 8'd10) ? 7'b0 :
+
+						 (counter == 8'd11) ? 7'b0010000 : 
+						 						 (counter == 8'd12) ? 7'b0 :
+
+						 (counter == 8'd13) ? 7'b0010000 : 
+												(counter == 8'd14) ? 7'b0 :
+												
+						 (counter == 8'd15) ? 7'b0 : //REST
+	 
+						 (counter == 8'd16) ? 7'b0100000 :
+						 						 (counter == 8'd17) ? 7'b0 :
+
+						 (counter == 8'd18) ? 7'b0100000 : 
+						 						 (counter == 8'd19) ? 7'b0 :
+
+						 (counter == 8'd20) ? 7'b0100000 : 
+						 						 (counter == 8'd21) ? 7'b0 :
+												 
+						 (counter == 8'd22) ? 7'b0 : //REST
+
+						 (counter == 8'd23) ? 7'b0010000 : 
+						 						 (counter == 8'd24) ? 7'b0 :
+
+						 (counter == 8'd25) ? 7'b0000100 : 
+						 						 (counter == 8'd26) ? 7'b0 :
+						 (counter == 8'd27) ? 7'b0000100 :
+						 						 (counter == 8'd28) ? 7'b0 :
+												 
+						(counter == 8'd29) ? 7'b0 : //REST
+
+
+						 (counter == 8'd30) ? 7'b0010000 : 
+						 						 (counter == 8'd31) ? 7'b0 :
+
+						 (counter == 8'd32) ? 7'b0100000 : 
+						 						 (counter == 8'd33) ? 7'b0 :
+
+						 (counter == 8'd34) ? 7'b1000000 : 
+						 						 (counter == 8'd35) ? 7'b0 :
+
+						 (counter == 8'd36) ? 7'b0100000 : 
+						 						 (counter == 8'd37) ? 7'b0 :
+
+						 (counter == 8'd38) ? 7'b0010000 : 
+												(counter == 8'd39) ? 7'b0 :
+	 
+						 (counter == 8'd40) ? 7'b0010000 :
+						 						 (counter == 8'd41) ? 7'b0 :
+
+						 (counter == 8'd42) ? 7'b0010000 : 
+						 						 (counter == 8'd43) ? 7'b0 :
+
+						 (counter == 8'd44) ? 7'b0010000 : 
+						 						 (counter == 8'd45) ? 7'b0 :
+
+						 (counter == 8'd46) ? 7'b0100000 : 
+						 						 (counter == 8'd47) ? 7'b0 :
+
+						 (counter == 8'd48) ? 7'b0100000 : 
+						 						 (counter == 8'd49) ? 7'b0 :
+						 (counter == 8'd50) ? 7'b0010000 : 
+						 						 (counter == 8'd51) ? 7'b0 :
+
+						 (counter == 8'd52) ? 7'b0100000 : 
+						 						 (counter == 8'd53) ? 7'b0 :
+
+						 (counter == 8'd54) ? 7'b1000000 : 
+						 						 (counter == 8'd55) ? 7'b0 :
+						 7'b0;
+
 
 ///////// PROCESSOR SHIT //////////////////////////////////////////////////////////////////////////////////////////
 	wire reset;

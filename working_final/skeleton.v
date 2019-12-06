@@ -34,16 +34,10 @@ module skeleton(start,
 	AUD_XCK,
 	AUD_DACDAT,
 
-	I2C_SCLK,
-	
-	//TEST OUTPUTS
-	note_highlighted
+	I2C_SCLK
 	
 	);  													// 50 MHz clock
 	
-	//Test outputs
-	output [6:0] note_highlighted;
-	assign note_highlighted = key_to_highlight;
 		
 	////////////////////////	VGA	////////////////////////////
 	output			VGA_CLK;   				//	VGA Clock
@@ -231,7 +225,7 @@ reg [25:0] slow_clk;
 
 		// c
 
-		if (SW[6] | play_mary[6]) begin
+		if (c_note | play_mary[6]) begin
 
 			cnt0 <= cnt0+1;
 
@@ -297,7 +291,7 @@ reg [25:0] slow_clk;
 
 		// d
 
-		if (SW[5] | play_mary[5]) begin
+		if (d_note | play_mary[5]) begin
 
 			cnt1 <= cnt1+1;
 
@@ -329,7 +323,7 @@ reg [25:0] slow_clk;
 
 		// e
 
-		if (SW[4] | play_mary[4]) begin
+		if (e_note | play_mary[4]) begin
 
 			cnt2 <= cnt2+1;
 
@@ -361,7 +355,7 @@ reg [25:0] slow_clk;
 
 		// f
 
-		if (SW[3] | play_mary[3]) begin
+		if (f_note | play_mary[3]) begin
 
 			cnt3 <= cnt3+1;
 
@@ -393,7 +387,7 @@ reg [25:0] slow_clk;
 
 		// g
 
-		if (SW[2] | play_mary[2]) begin
+		if (g_note | play_mary[2]) begin
 
 			cnt4 <= cnt4+1;
 
@@ -425,7 +419,7 @@ reg [25:0] slow_clk;
 
 		// a
 
-		if (SW[1] | play_mary[1]) begin
+		if (a_note | play_mary[1]) begin
 
 			cnt5 <= cnt5+1;
 
@@ -457,7 +451,7 @@ reg [25:0] slow_clk;
 
 		// b
 
-		if (SW[0] | play_mary[0]) begin
+		if (b_note | play_mary[0]) begin
 
 			cnt6 <= cnt6+1;
 
@@ -774,6 +768,7 @@ wire [6:0] play_mary;
 	 
 	 wire [31:0] key_currently_pressed;
 	 assign key_currently_pressed[6:0] = SW;
+
 	 assign key_currently_pressed[31:7] = 25'b0;
 	 
 	 wire [31:0] register_eight_output; //This is the value in register 8 at all times

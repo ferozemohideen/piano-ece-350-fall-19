@@ -1,4 +1,4 @@
-Analysis & Synthesis Status : Successful - Thu Dec 05 22:37:32 2019
+Analysis & Synthesis Status : Successful - Fri Dec 06 00:07:50 2019
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : skeleton
 Top-level Entity Name : skeleton
@@ -7,7 +7,7 @@ Total logic elements : 5,260
     Total combinational functions : 4,154
     Dedicated logic registers : 2,106
 Total registers : 2106
-Total pins : 184
+Total pins : 177
 Total virtual pins : 0
 Total memory bits : 2,113,824
 Embedded Multiplier 9-bit elements : 0
